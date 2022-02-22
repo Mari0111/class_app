@@ -5,56 +5,49 @@ import 'package:flutter/material.dart';
 void main() => runApp(MyApp());
 
 class MyApp extends StatelessWidget {
-  @override
-  Widget build(BuildContext context) {
-    return const MaterialApp(
-      home: HomePage(),
-    );
-  }
-}
-//comment
-class HomePage extends StatelessWidget {
-  const HomePage ({Key? key}) : super(key: key);
-//this is a test comment
-  @override
-  Widget build(BuildContext context) {
-    return Scaffold(
-      body: Center(
-        child: Container(
-          width: 300,
-          child: Column(
-            children: [
-              const SizedBox(height:100),
-             const TextField(
-                decoration: InputDecoration(
-                  border: OutlineInputBorder(),
-                  hintText: 'Username',
-                ),
-               ),
-               const SizedBox(height:20),
-                TextFormField(
-                    obscureText: true,
-                    decoration: const InputDecoration(
-                      border: OutlineInputBorder(),
-                      hintText: 'Password',
-                    ),
-                  ),
-              //  const TextField(
-                 
-              //   decoration: InputDecoration(
-              //     border: OutlineInputBorder(),
-              //     hintText: 'Password',
-              //   ),
-              //  ),
-              const SizedBox(height:20),
-              ElevatedButton(onPressed: () {},
-              child: Text('Login'),
-              ),
-            ],
-          ),
-        ),
-      ),
+  const MyApp({Key? key}) : super(key: key);
 
+  @override
+  Widget build(BuildContext context) {
+    return MaterialApp(
+      title: "Flutter layout demo",
+      home: Scaffold(
+          appBar: AppBar(
+            title: const Text('Flutter layout demo'),
+          ),
+          body: Column(
+            children: [
+              Container(
+                padding: const EdgeInsets.all(32),
+                child: Row(children: [
+                  Expanded(
+                    child: Column(children: [
+                      Container(
+                        padding: const EdgeInsets.only(bottom: 8),
+                        child: const Text(
+                          'Oeschinen Lake Campground',
+                          style: TextStyle(
+                            fontWeight: FontWeight.bold,
+                          ),
+                        ),
+                      ),
+                      Text(
+                        'Kandersteg, Switzerland',
+                        style: TextStyle(
+                          color: Colors.grey[500],
+                        ),
+                      ),
+                    ]),
+                  ),
+                  Icon(
+                    Icons.star,
+                    color: Colors.red[500],
+                  ),
+                  const Text('41'),
+                ]),
+              )
+            ],
+          )),
     );
   }
 }
