@@ -10,12 +10,13 @@ class MyApp extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
-      title: "Flutter layout demo",
+      title: 'Flutter layout demo',
       home: Scaffold(
-          appBar: AppBar(
-            title: const Text('Flutter layout demo'),
-          ),
-          body: Column(children: [
+        appBar: AppBar(
+          title: const Text('Flutter layout demo'),
+        ),
+        body: Column(
+          children: [
             TitleRow(),
             Row(
               mainAxisAlignment: MainAxisAlignment.spaceEvenly,
@@ -24,8 +25,10 @@ class MyApp extends StatelessWidget {
                 ButtonColumn(label: 'ROUTE', icon: Icons.near_me),
                 ButtonColumn(label: 'SHARE', icon: Icons.share),
               ],
-            )
-          ])),
+            ),
+          ],
+        ),
+      ),
     );
   }
 }
@@ -36,6 +39,7 @@ class ButtonColumn extends StatelessWidget {
     required this.label,
     required this.icon,
   }) : super(key: key);
+
   final String label;
   final IconData icon;
 
@@ -74,28 +78,29 @@ class TitleRow extends StatelessWidget {
       child: Row(
         children: [
           Expanded(
-              child: Column(
-            children: [
-              Container(
-                padding: const EdgeInsets.only(bottom: 8),
-                child: const Text(
-                  'Oeschinen Lake Campground',
-                  style: TextStyle(
-                    fontWeight: FontWeight.bold,
+            child: Column(
+              children: [
+                Container(
+                  padding: const EdgeInsets.only(bottom: 8),
+                  child: const Text(
+                    'Oeschinen Lake Campground',
+                    style: TextStyle(
+                      fontWeight: FontWeight.bold,
+                    ),
                   ),
                 ),
-              ),
-              Text(
-                'Kandersteg, Switzerland',
-                style: TextStyle(
-                  color: Colors.grey[500],
+                Text(
+                  'Kandersteg, Switzerland',
+                  style: TextStyle(
+                    color: Colors.grey[500],
+                  ),
                 ),
-              ),
-            ],
-          )),
+              ],
+            ),
+          ),
           Icon(
             Icons.star,
-            color: Colors.pink[500],
+            color: Colors.red[500],
           ),
           const Text('41'),
         ],
