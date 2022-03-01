@@ -10,94 +10,59 @@ class MyApp extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
-      title: "Flutter layout demo",
-      home: Scaffold(
-          appBar: AppBar(
-            title: const Text('Flutter layout demo'),
-          ),
-          body: Column(children: [
-            TitleRow(),
-            Row(
-              mainAxisAlignment: MainAxisAlignment.spaceEvenly,
-              children: [
-                ButtonColumn(label: 'CALL', icon: Icons.call),
-                ButtonColumn(label: 'ROUTE', icon: Icons.near_me),
-                ButtonColumn(label: 'SHARE', icon: Icons.share),
-              ],
-            )
-          ])),
+      theme: ThemeData(primarySwatch: Colors.purple),
+      home: HomePage(),
     );
   }
 }
 
-class ButtonColumn extends StatelessWidget {
-  const ButtonColumn({
-    Key? key,
-    required this.label,
-    required this.icon,
-  }) : super(key: key);
-  final String label;
-  final IconData icon;
+class HomePage extends StatelessWidget {
+  HomePage({Key? key}) : super(key: key);
 
   @override
   Widget build(BuildContext context) {
-    return Column(
-      mainAxisSize: MainAxisSize.min,
-      mainAxisAlignment: MainAxisAlignment.center,
-      children: [
-        Icon(icon, color: Colors.blue),
-        Container(
-          margin: const EdgeInsets.only(top: 8),
-          child: Text(
-            label,
-            style: TextStyle(
-              fontSize: 12,
-              fontWeight: FontWeight.w400,
-              color: Colors.blue,
+    return Scaffold(
+      appBar: AppBar(
+        title: Text("My List"),
+      ),
+      body: ListView(
+        children: [
+          Card(
+            elevation: 20,
+            child: ListTile(
+              leading: Icon(Icons.wb_sunny),
+              title: Text('Sun'),
+              subtitle: Text("Hot and yellow"),
+              trailing: Icon(Icons.keyboard_arrow_right),
+              onTap: () {
+                print("Sun");
+              },
             ),
           ),
-        ),
-      ],
-    );
-  }
-}
-
-class TitleRow extends StatelessWidget {
-  const TitleRow({
-    Key? key,
-  }) : super(key: key);
-
-  @override
-  Widget build(BuildContext context) {
-    return Container(
-      padding: const EdgeInsets.all(32),
-      child: Row(
-        children: [
-          Expanded(
-              child: Column(
-            children: [
-              Container(
-                padding: const EdgeInsets.only(bottom: 8),
-                child: const Text(
-                  'Oeschinen Lake Campground',
-                  style: TextStyle(
-                    fontWeight: FontWeight.bold,
-                  ),
-                ),
-              ),
-              Text(
-                'Kandersteg, Switzerland',
-                style: TextStyle(
-                  color: Colors.grey[500],
-                ),
-              ),
-            ],
-          )),
-          Icon(
-            Icons.star,
-            color: Colors.pink[500],
+          Card(
+            elevation: 20,
+            child: ListTile(
+              leading: Icon(Icons.brightness_3),
+              title: Text('Moon'),
+              subtitle: Text("Cold and white"),
+              trailing: Icon(Icons.keyboard_arrow_right),
+              onTap: () {
+                print("Moon");
+              },
+            ),
           ),
-          const Text('41'),
+          Card(
+            elevation: 20,
+            child: ListTile(
+              leading: Icon(Icons.star),
+              title: Text('Stars'),
+              subtitle: Text("Beautiful at night"),
+              trailing: Icon(Icons.keyboard_arrow_right),
+              onTap: () {
+                print("Stars");
+              },
+            ),
+          ),
         ],
       ),
     );
