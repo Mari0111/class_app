@@ -10,7 +10,6 @@ class MyApp extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
-<<<<<<< HEAD
       theme: ThemeData(primarySwatch: Colors.purple),
       home: HomePage(),
     );
@@ -66,32 +65,6 @@ class HomePage extends StatelessWidget {
           ),
         ],
       ),
-=======
-      title: 'Flutter layout demo',
-      home: Scaffold(
-          appBar: AppBar(
-            title: const Text('Flutter layout demo'),
-          ),
-          body: ListView(
-            children: const [
-              ListTile(
-                title: Text("Үл хөдлөх"),
-                subtitle: Text("15,373 зар"),
-                leading: Icon(Icons.home),
-              ),
-              ListTile(
-                title: Text("Үл хөдлөх"),
-                subtitle: Text("15,373 зар"),
-                leading: Icon(Icons.home),
-              ),
-              ListTile(
-                title: Text("Үл хөдлөх"),
-                subtitle: Text("15,373 зар"),
-                leading: Icon(Icons.home),
-              ),
-            ],
-          )),
->>>>>>> 73492e96ecc39a0c69a1a3324399c050020a2716
     );
   }
 }
