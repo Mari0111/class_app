@@ -28,23 +28,60 @@ class HomePage extends StatelessWidget {
       body: ListView(
         children: [
           Card(
-            elevation: 20,
             child: ListTile(
-              leading: Icon(Icons.wb_sunny),
-              title: Text('Sun'),
-              subtitle: Text("Hot and yellow"),
+              leading: const Icon(
+                Icons.assignment_rounded,
+                color: Color.fromARGB(255, 33, 129, 36),
+              ),
+              shape: BeveledRectangleBorder(
+                borderRadius: BorderRadius.circular(10.0),
+              ),
+              title: Text('Төлбөр'),
               trailing: Icon(Icons.keyboard_arrow_right),
-              onTap: () {
-                print("Sun");
-              },
+              onTap: () {},
             ),
           ),
           Card(
-            elevation: 20,
             child: ListTile(
-              leading: Icon(Icons.brightness_3),
-              title: Text('Moon'),
-              subtitle: Text("Cold and white"),
+              leading: Icon(Icons.savings_rounded,
+                  color: Color.fromARGB(255, 33, 129, 36)),
+              title: Text('Зорилготой хадгаламж'),
+              trailing: Icon(Icons.keyboard_arrow_right),
+              onTap: () {},
+            ),
+          ),
+          Card(
+            child: ListTile(
+              leading: Icon(Icons.query_builder,
+                  color: Color.fromARGB(255, 33, 129, 36)),
+              title: Text('Миний санхүү'),
+              trailing: Icon(Icons.keyboard_arrow_right),
+              onTap: () {},
+            ),
+          ),
+          Card(
+            child: ListTile(
+              leading: Icon(Icons.credit_card_rounded,
+                  color: Color.fromARGB(255, 33, 129, 36)),
+              title: Text('Карт'),
+              trailing: Icon(Icons.keyboard_arrow_right),
+              onTap: () {},
+            ),
+          ),
+          Card(
+            child: ListTile(
+              leading: Icon(Icons.savings_rounded,
+                  color: Color.fromARGB(255, 33, 129, 36)),
+              title: Text('Дансны үйлчилгээ'),
+              trailing: Icon(Icons.keyboard_arrow_right),
+              onTap: () {},
+            ),
+          ),
+          Card(
+            child: ListTile(
+              leading: Icon(Icons.phone_android_rounded,
+                  color: Color.fromARGB(255, 33, 129, 36)),
+              title: Text('Цахим банк'),
               trailing: Icon(Icons.keyboard_arrow_right),
               onTap: () {
                 print("Moon");
@@ -52,15 +89,12 @@ class HomePage extends StatelessWidget {
             ),
           ),
           Card(
-            elevation: 20,
             child: ListTile(
-              leading: Icon(Icons.star),
-              title: Text('Stars'),
-              subtitle: Text("Beautiful at night"),
+              leading: Icon(Icons.compare_arrows,
+                  color: Color.fromARGB(255, 33, 129, 36)),
+              title: Text('Давтамжит гүйлгээ'),
               trailing: Icon(Icons.keyboard_arrow_right),
-              onTap: () {
-                print("Stars");
-              },
+              onTap: () {},
             ),
           ),
         ],
